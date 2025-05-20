@@ -41,6 +41,9 @@ function handleImageError() {
                 <header
                     class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3"
                 >
+                    <div>
+                        Tast-E-Book
+                    </div>
                     <div class="flex lg:col-start-2 lg:justify-center">
                         <svg
                             class="h-12 w-auto text-white lg:h-16 lg:text-[#FF2D20]"

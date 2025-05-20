@@ -33,6 +33,16 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+        public function recipes()
+    {
+        return $this->hasMany(Recipe::class);
+    }
+
+    public function ratings()
+    {
+        return $this->hasMany(Rating::class);
+    }
+
     /**
      * Get the attributes that should be cast.
      *
