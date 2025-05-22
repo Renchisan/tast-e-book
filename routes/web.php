@@ -6,13 +6,19 @@ use App\Http\Controllers\RatingController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Models\Recipe;
+use App\Models\User;
+
 
 Route::get('/', function () {
+    
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
+        'recipes' => Recipe::with('user', 'ratings')->latest()->get(),
+        'users' => User::withCount('recipes')->get()
     ]);
 });
 

@@ -16,6 +16,18 @@ class ProfileController extends Controller
     /**
      * Display the user's profile form.
      */
+
+    public function index()
+    {
+        // Get all users with their recipes loaded
+        $users = User::with('recipes')->get();
+
+        // Pass users to the view or Inertia page
+        return inertia('Profiles/Index', [
+            'users' => $users,
+        ]);
+    }
+
     public function edit(Request $request): Response
     {
         return Inertia::render('Profile/Edit', [

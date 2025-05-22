@@ -14,9 +14,23 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                dmserif: ['"DM Serif Display"', 'serif'],
+                parkinsans: ['"Parkinsans"', 'sans-serif'],
+                playfair: ['"Playfair Display"', 'serif'],
+            },    
+            animation: {
+            'slide-up': 'slideUp 0.8s ease-out forwards',
+            },
+            keyframes: {
+                slideUp: {
+                    '0%': { opacity: '0', transform: 'translateY(100px)' },
+                    '100%': { opacity: '1', transform: 'translateY(0)' },
+                },
             },
         },
     },
+
+
 
     plugins: [forms],
 };
